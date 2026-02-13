@@ -1,0 +1,137 @@
+{
+  "identity": {
+    "name": "E1 - The Anti-AI Designer",
+    "persona": "The Architect",
+    "vibe": "Precision, Swiss-Style, Data-First, Brutalist-Light",
+    "principles": [
+      "No decorative gradients. Color denotes function only.",
+      "Typography is the UI. Size and weight define hierarchy.",
+      "Borders over Shadows. Define edges with 1px strokes, not blurry drop shadows.",
+      "Density control. High density for data, high breathing room for reading."
+    ]
+  },
+  "typography": {
+    "font_imports": [
+      "@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap');"
+    ],
+    "family": {
+      "heading": "\"JetBrains Mono\", monospace",
+      "body": "\"Inter\", sans-serif"
+    },
+    "usage": {
+      "h1": "font-mono text-4xl md:text-5xl font-medium tracking-tight text-primary",
+      "h2": "font-mono text-2xl md:text-3xl font-normal tracking-tight",
+      "h3": "font-mono text-xl font-medium",
+      "body": "font-sans text-base leading-relaxed text-muted-foreground",
+      "body_large": "font-sans text-lg leading-relaxed font-light",
+      "label": "font-mono text-xs uppercase tracking-wider text-muted-foreground",
+      "code": "font-mono text-sm bg-muted/50 p-1 rounded"
+    }
+  },
+  "colors": {
+    "theme_strategy": "Swiss High-Contrast (Light Mode Primary)",
+    "css_variables": {
+      "root": {
+        "--background": "0 0% 100%",
+        "--foreground": "240 10% 3.9%",
+        "--card": "0 0% 100%",
+        "--card-foreground": "240 10% 3.9%",
+        "--popover": "0 0% 100%",
+        "--popover-foreground": "240 10% 3.9%",
+        "--primary": "240 5.9% 10%",
+        "--primary-foreground": "0 0% 98%",
+        "--secondary": "240 4.8% 95.9%",
+        "--secondary-foreground": "240 5.9% 10%",
+        "--muted": "240 4.8% 95.9%",
+        "--muted-foreground": "240 3.8% 46.1%",
+        "--accent": "240 4.8% 95.9%",
+        "--accent-foreground": "240 5.9% 10%",
+        "--destructive": "0 84.2% 60.2%",
+        "--destructive-foreground": "0 0% 98%",
+        "--border": "240 5.9% 90%",
+        "--input": "240 5.9% 90%",
+        "--ring": "240 5.9% 10%",
+        "--radius": "0.3rem"
+      },
+      "dark": {
+        "--background": "240 10% 3.9%",
+        "--foreground": "0 0% 98%",
+        "--card": "240 10% 3.9%",
+        "--card-foreground": "0 0% 98%",
+        "--popover": "240 10% 3.9%",
+        "--popover-foreground": "0 0% 98%",
+        "--primary": "0 0% 98%",
+        "--primary-foreground": "240 5.9% 10%",
+        "--secondary": "240 3.7% 15.9%",
+        "--secondary-foreground": "0 0% 98%",
+        "--muted": "240 3.7% 15.9%",
+        "--muted-foreground": "240 5% 64.9%",
+        "--accent": "240 3.7% 15.9%",
+        "--accent-foreground": "0 0% 98%",
+        "--destructive": "0 62.8% 30.6%",
+        "--destructive-foreground": "0 0% 98%",
+        "--border": "240 3.7% 15.9%",
+        "--input": "240 3.7% 15.9%",
+        "--ring": "240 4.9% 83.9%"
+      }
+    }
+  },
+  "layout_strategies": {
+    "page_container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12",
+    "dashboard_grid": "grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-min",
+    "section_spacing": "space-y-8",
+    "glass_header": "sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60"
+  },
+  "components": {
+    "buttons": {
+      "default": "rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+      "primary": "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+      "secondary": "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
+      "outline": "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+      "ghost": "hover:bg-accent hover:text-accent-foreground"
+    },
+    "inputs": {
+      "default": "flex h-12 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+      "large_search": "flex h-16 w-full rounded-lg border-2 border-input bg-background px-6 text-lg ring-offset-background file:border-0 placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+    },
+    "cards": {
+      "style": "rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-md transition-shadow duration-200",
+      "header": "flex flex-col space-y-1.5 p-6",
+      "content": "p-6 pt-0"
+    }
+  },
+  "visual_enhancers": {
+    "micro_interactions": {
+      "hover_lift": "hover:-translate-y-0.5 transition-transform duration-200",
+      "active_scale": "active:scale-[0.98] transition-transform duration-100"
+    },
+    "borders": {
+      "subtle": "border border-border/50",
+      "active": "border-primary"
+    },
+    "status_indicators": {
+      "success": "bg-green-500/10 text-green-600 border-green-200",
+      "warning": "bg-yellow-500/10 text-yellow-600 border-yellow-200",
+      "error": "bg-red-500/10 text-red-600 border-red-200",
+      "neutral": "bg-gray-100 text-gray-600 border-gray-200"
+    }
+  },
+  "instructions_to_main_agent": [
+    "UPDATE /app/frontend/src/index.css: Replace the @layer base :root and .dark variables with the 'colors.css_variables' values provided above.",
+    "ADD FONTS: Add the @import for JetBrains Mono and Inter to the top of /app/frontend/src/index.css.",
+    "APPLY FONTS: Update the 'body' rule in index.css to use 'Inter' as default, and create utility classes for 'font-mono' using 'JetBrains Mono'.",
+    "MARKETING/HOME PAGE: Do not use a generic centered layout. Use a 'Bento Grid' layout. Left column (Documentation List) takes 4 cols, Right column (Chat/Upload) takes 8 cols.",
+    "UPLOAD COMPONENT: Make the drag-and-drop area large (h-64) with a dashed border that turns solid primary on hover. Use a large icon.",
+    "CHAT INTERFACE: The input bar should be at the bottom, sticky. The chat history should flow upwards. Use bubbles but keep them minimal (no heavy colors). User: Dark Grey bubble. AI: Transparent with left border line.",
+    "STATUS PAGE: Use a dense grid. Each status (DB, Backend, LLM) should be a small card with a glowing dot indicator.",
+    "ICONS: Use 'lucide-react' for all icons. Keep stroke width at 1.5px or 2px max for consistency.",
+    "TESTING: Ensure every button and input has a 'data-testid' attribute (e.g., 'upload-btn', 'query-input')."
+  ],
+  "universal_guidelines": [
+    "Do not use gradients for backgrounds. Use solid colors or subtle noise patterns if absolutely necessary.",
+    "Avoid 'center-everything'. Use asymmetry to create visual interest.",
+    "Ensure all text has a contrast ratio of at least 4.5:1 against its background.",
+    "Use 2x more padding than you think is necessary. Whitespace is a feature.",
+    "Never use generic 'AI' emojis (robot, brain, sparkles) in the UI. Use abstract geometric icons instead."
+  ]
+}
