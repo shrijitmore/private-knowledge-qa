@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 STORE_DIR = Path(__file__).parent.parent / "data"
 INDEX_PATH = STORE_DIR / "faiss_index.bin"
 META_PATH = STORE_DIR / "metadata.json"
-EMBEDDING_DIM = 768
+EMBEDDING_DIM = 3072
 
 _index = None
 _metadata = []

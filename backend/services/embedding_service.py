@@ -21,7 +21,7 @@ async def generate_embeddings(texts: list) -> list:
     for i in range(0, len(texts), batch_size):
         batch = texts[i:i + batch_size]
         result = genai.embed_content(
-            model="models/text-embedding-004",
+            model="models/gemini-embedding-001",
             content=batch,
             task_type="retrieval_document"
         )
@@ -32,7 +32,7 @@ async def generate_embeddings(texts: list) -> list:
 async def generate_query_embedding(text: str) -> list:
     _ensure_configured()
     result = genai.embed_content(
-        model="models/text-embedding-004",
+        model="models/gemini-embedding-001",
         content=text,
         task_type="retrieval_query"
     )
