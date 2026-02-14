@@ -13,6 +13,11 @@ from dotenv import load_dotenv
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / ".env")
 
+# ── MongoDB ──────────────────────────────────────────────────────────
+MONGODB_URI: str = os.environ.get("MONGODB_URI", "mongodb://localhost:27017/knowledge_qa")
+# Extract database name from URI, removing any query parameters
+DB_NAME: str = MONGODB_URI.split("/")[-1].split("?")[0] if "/" in MONGODB_URI else "knowledge_qa"
+
 # ── Gemini LLM ──────────────────────────────────────────────────────
 GEMINI_API_KEY: str = os.environ["GEMINI_API_KEY"]
 GEMINI_CHAT_MODEL: str = "gemini-2.0-flash"

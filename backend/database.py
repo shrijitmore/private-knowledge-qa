@@ -8,11 +8,7 @@ Environment variables ``MONGO_URL`` and ``DB_NAME`` are loaded from
 """
 
 from motor.motor_asyncio import AsyncIOMotorClient
-from dotenv import load_dotenv
-from pathlib import Path
-import os
+from config import MONGODB_URI, DB_NAME
 
-load_dotenv(Path(__file__).parent / ".env")
-
-client: AsyncIOMotorClient = AsyncIOMotorClient(os.environ["MONGO_URL"])
-db = client[os.environ["DB_NAME"]]
+client: AsyncIOMotorClient = AsyncIOMotorClient(MONGODB_URI)
+db = client[DB_NAME]

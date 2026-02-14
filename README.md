@@ -4,8 +4,10 @@ A full-stack web application that enables users to upload private documents, ask
 
 ## 🚀 Live Demo
 
-**Live App**: [Your Hosted URL Here]  
-**GitHub**: [Your GitHub URL Here]
+**Live App**: [To be deployed - URL will be added here]  
+**GitHub**: [https://github.com/shrijitmore/private-knowledge-qa](https://github.com/shrijitmore/private-knowledge-qa)
+
+> **Note**: Please deploy the application and update this section with the actual live URL before submission.
 
 ## ✨ Features
 
