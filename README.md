@@ -4,10 +4,11 @@ A full-stack web application that enables users to upload private documents, ask
 
 ## 🚀 Live Demo
 
-**Live App**: [To be deployed - URL will be added here]  
+**Live App**: https://private-knowledge-qa-sage.vercel.app/  
+**Backend API**: https://private-knowledge-qa-backend-7mzpthaneq-uc.a.run.app  
 **GitHub**: [https://github.com/shrijitmore/private-knowledge-qa](https://github.com/shrijitmore/private-knowledge-qa)
 
-> **Note**: Please deploy the application and update this section with the actual live URL before submission.
+> **Note**: Frontend deployed on Vercel, Backend deployed on Google Cloud Run.
 
 ## ✨ Features
 
