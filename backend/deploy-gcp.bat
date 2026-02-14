@@ -38,7 +38,7 @@ gcloud run deploy private-knowledge-qa-backend ^
   --allow-unauthenticated ^
   --set-env-vars GEMINI_API_KEY=%GEMINI_KEY% ^
   --set-env-vars MONGODB_URI=%MONGO_URI% ^
-  --set-env-vars CORS_ORIGINS=%FRONTEND_URL%
+  --set-env-vars "CORS_ORIGINS=%FRONTEND_URL% http://localhost:3000"
 
 echo.
 echo [4/5] Getting service URL...

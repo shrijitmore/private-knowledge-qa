@@ -43,7 +43,12 @@ QA_HISTORY_LIMIT: int = 5
 SOURCE_PREVIEW_LENGTH: int = 200  # max chars shown per source chunk
 
 # ── CORS ─────────────────────────────────────────────────────────────
-CORS_ORIGINS: list[str] = os.environ.get("CORS_ORIGINS", "*").split(",")
+# Handle both comma and space separated origins to avoid gcloud parsing issues
+CORS_ORIGINS: list[str] = [
+    origin.strip() 
+    for origin in os.environ.get("CORS_ORIGINS", "*").replace(",", " ").split() 
+    if origin.strip()
+]
 
 # Ensure writable directories exist at import time
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)

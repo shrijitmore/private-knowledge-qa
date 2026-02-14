@@ -14,8 +14,8 @@ export default function AskPage() {
 
   useEffect(() => {
     fetch(`${API}/qa/history`)
-      .then(r => r.json())
-      .then(data => setHistory(Array.isArray(data) ? data : []))
+      .then((r) => r.json())
+      .then((data) => setHistory(Array.isArray(data) ? data : []))
       .catch(() => {});
   }, []);
 
@@ -29,13 +29,13 @@ export default function AskPage() {
 
     try {
       const res = await fetch(`${API}/qa/ask`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: question.trim() }),
       });
       if (!res.ok) {
         const err = await res.json();
-        throw new Error(err.detail || 'Failed to get answer');
+        throw new Error(err.detail || "Failed to get answer");
       }
       const data = await res.json();
       setAnswer(data);
@@ -108,7 +108,10 @@ export default function AskPage() {
             <Card data-testid="answer-loading">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3">
-                  <Loader2 size={18} className="animate-spin text-muted-foreground" />
+                  <Loader2
+                    size={18}
+                    className="animate-spin text-muted-foreground"
+                  />
                   <p className="text-sm text-muted-foreground">
                     Searching documents and generating answer...
                   </p>
@@ -163,7 +166,7 @@ export default function AskPage() {
                             {(source.similarity_score * 100).toFixed(0)}% match
                           </span>
                         </div>
-                        <p className="text-xs text-muted-foreground leading-relaxed font-mono">
+                        <p className="text-xs text-muted-foreground leading-relaxed font-mono break-all whitespace-pre-wrap">
                           {source.chunk_text}
                         </p>
                       </div>
@@ -184,13 +187,17 @@ export default function AskPage() {
             {history.length === 0 ? (
               <Card>
                 <CardContent className="py-12 text-center text-muted-foreground">
-                  <Clock size={24} className="mx-auto mb-2 opacity-30" strokeWidth={1} />
+                  <Clock
+                    size={24}
+                    className="mx-auto mb-2 opacity-30"
+                    strokeWidth={1}
+                  />
                   <p className="text-xs">No questions yet</p>
                 </CardContent>
               </Card>
             ) : (
               <div className="space-y-2">
-                {history.map(item => (
+                {history.map((item) => (
                   <Card
                     key={item.id}
                     className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200"
@@ -198,7 +205,9 @@ export default function AskPage() {
                     onClick={() => setQuestion(item.question)}
                   >
                     <CardContent className="p-3">
-                      <p className="text-sm font-medium line-clamp-2">{item.question}</p>
+                      <p className="text-sm font-medium line-clamp-2">
+                        {item.question}
+                      </p>
                       <p className="text-xs text-muted-foreground mt-1 line-clamp-1">
                         {item.answer}
                       </p>
